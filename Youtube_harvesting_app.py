@@ -12,10 +12,10 @@ from sqlalchemy import create_engine
 
 #Youtube API Connector
 youtube = build('youtube', 'v3', 
-                developerKey='AIzaSyCLkZGt9ob2TFdY2k7DufO5U5pkVKXOG40')
+                developerKey='API-KEY')
 
 #MongoDB Connector  
-client=pymongo.MongoClient("mongodb+srv://shivakumar:mongodb2410@cluster0.dne8d8h.mongodb.net/?retryWrites=true&w=majority")
+client=pymongo.MongoClient("mongodb+srv://<user-name>:<Password>@cluster0.dne8d8h.mongodb.net/?retryWrites=true&w=majority")
 db=client.Youtube_data
 collection=db.channelDetails
 #MySQL Connector
@@ -27,7 +27,7 @@ password = "mysql1234",
 database = "channel_data"
 )
 mycursor = connect.cursor(buffered=True)
-engine = create_engine('mysql+pymysql://root:mysql1234@localhost/channel_data?charset=utf8mb4', echo=False)
+engine = create_engine('mysql+pymysql://root:<Password>@localhost/channel_data?charset=utf8mb4', echo=False)
 
 #Pushing Data to MongoDB
 def push_to_mongo(pd_youtube):
